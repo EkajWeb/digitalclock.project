@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ekaj — Digital Clock</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background glows: purely decorative, sit behind everything -->
+  <div class="Digital Clock by Ekaj">
+    <div class="glow glow--blue"></div>
+    <div class="glow glow--purple"></div>
+    <div class="glow glow--cyan"></div>
+  </div>
+
+  <main class="page">
+
+    <!-- Top bar: theme toggle + format toggle -->
+    <header class="topbar">
+      <button id="themeToggle" class="pill-btn" type="button" aria-label="Toggle light or dark theme">
+        <span class="pill-btn__icon" id="themeIcon">☀️</span>
+        <span id="themeLabel">Light</span>
+      </button>
+
+      <div class="segmented" id="formatToggle" role="group" aria-label="Time format">
+        <button class="segmented__option is-active" data-format="12" type="button">12h</button>
+        <button class="segmented__option" data-format="24" type="button">24h</button>
+      </div>
+    </header>
+
+    <!-- The glass clock card: the signature element of this design -->
+    <section class="clock-card">
+      <p class="clock-card__day" id="dayLabel">Monday</p>
+
+      <div class="clock-card__time" id="timeDisplay" aria-live="polite">
+        <span id="hours">12</span><span class="colon">:</span><span id="minutes">00</span><span class="colon">:</span><span id="seconds">00</span><span id="meridiem" class="meridiem">AM</span>
+      </div>
+
+      <p class="clock-card__date" id="dateLabel">January 1, 2026</p>
+
+      <div class="divider"></div>
+
+      <!-- Timezone selector: optional feature, styled to match the glass card -->
+      <div class="tz-row">
+        <label for="tzSelect" class="tz-row__label">Timezone</label>
+        <select id="tzSelect" class="tz-select">
+          <option value="local">Local time</option>
+        </select>
+      </div>
+    </section>
+
+    <p class="footnote">Built with HTML, CSS &amp; Vanilla JavaScript</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
