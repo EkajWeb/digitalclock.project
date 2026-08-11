@@ -1,9 +1,4 @@
-/* ===================================================================
-   CSS VARIABLES (custom properties)
-   Everything that changes between light/dark mode lives here.
-   Switching theme = swapping the values on the :root selector below,
-   which every other rule automatically picks up.
-=================================================================== */
+
 
 :root {
   /* base surface */
@@ -36,8 +31,7 @@
   --transition-theme: 0.6s var(--ease);
 }
 
-/* Dark mode overrides — same variable names, different values.
-   No other rule in this file needs to know a theme switch happened. */
+/* Dark mode overrides  */
 body.dark {
   --bg: #0b0d16;
   --bg-alt: #0f1220;
@@ -78,9 +72,6 @@ body {
 
 /* ===================================================================
    AMBIENT AURORA BACKGROUND
-   Three large, blurred, softly-animated circles that drift slowly
-   behind the glass card. This is the "signature" visual element —
-   it's what makes the page feel alive instead of static.
 =================================================================== */
 
 .aurora {
@@ -136,7 +127,7 @@ body.dark .glow {
   to { transform: translate(-5vmax, 6vmax) scale(0.95); }
 }
 
-/* Respect users who don't want motion */
+
 @media (prefers-reduced-motion: reduce) {
   .glow { animation: none; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
@@ -171,8 +162,6 @@ body.dark .glow {
 
 /* ===================================================================
    GLASSMORPHISM PRIMITIVES
-   The recurring "frosted glass" look: translucent background +
-   backdrop-filter blur + a hairline border + a soft outer shadow.
 =================================================================== */
 
 .pill-btn,
